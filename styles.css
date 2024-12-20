@@ -1,0 +1,280 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4a90e2, #5c6bc0); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container (Login, Main, Betslip) */
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Logo */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Header */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    background: #f1f1f1;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus State for Inputs */
+.input-group input:focus {
+    border-color: #4a90e2;
+    background: #e7f1ff;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Styles */
+.login-btn {
+    background: #4a90e2;
+    color: white;
+}
+
+.login-btn:hover {
+    background: #357ABD;
+    transform: translateY(-3px);
+}
+
+.whatsapp-btn {
+    margin-top: 15px;
+    background: #25d366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+    transform: translateY(-3px);
+}
+
+.verify-btn {
+    margin-top: 10px;
+    background: #ffcc00;
+    color: white;
+}
+
+.verify-btn:hover {
+    background: #e0a800;
+    transform: translateY(-3px);
+}
+
+/* Betslip Container */
+.betslip-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Betslip Header */
+.betslip-header {
+    background-color: #6200ea;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Match List */
+.match-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Match Card */
+.match {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.match:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Match Details */
+.match-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.match-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* League Name */
+.match-details .league {
+    font-weight: bold;
+    font-size: 18px;
+    color: #4a90e2;
+}
+
+/* Match Teams */
+.match-details .teams {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Odds and Pick */
+.match-details .pick,
+.match-details .odds {
+    font-size: 16px;
+    color: #555;
+}
+
+.match-details .odds {
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+/* Bet Button */
+.match .bet-btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Bet Button Hover Effect */
+.match .bet-btn:hover {
+    background-color: #357ABD;
+}
+
+/* Place Bet Button */
+.place-bet-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Place Bet Button Hover */
+.place-bet-btn:hover {
+    background-color: #218838;
+}
+
+/* Clear Betslip Button */
+.clear-betslip-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Clear Betslip Button Hover */
+.clear-betslip-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .match {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .match-details {
+        margin-bottom: 10px;
+    }
+
+    .match .bet-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}

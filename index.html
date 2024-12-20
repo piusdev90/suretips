@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betting App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <div class="logo-container">
+            <img src="https://i.imgur.com/r4wMwmE.png" alt="Logo" class="logo">
+        </div>
+        <div class="header">Pro Betting Tips</div>
+        <form onsubmit="verifyLogin(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="footer">
+            <button class="whatsapp-btn" onclick="joinWhatsApp()">Join WhatsApp Group</button>
+            <button class="verify-btn" onclick="verifyAccount()">Verify Your Account</button>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div class="container" id="mainPage" style="display: none;">
+        <h2 class="main-header">Pro Vip Tips</h2>
+        <div class="card-container">
+            <div class="card" onclick="showBetslip()">
+                <img src="https://i.imgur.com/2hP2SNF.png" alt="Correct Score">
+                <h3>Correct Score</h3>
+            </div>
+            <div class="card" onclick="showBetslip()">
+                <img src="https://i.imgur.com/mVvinFk.jpeg" alt="VIP Tips">
+                <h3>VIP Tips</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Betslip -->
+    <div class="betslip-container" id="betslipPage" style="display: none;">
+        <div class="betslip-header">Betslip for 19th December 2024</div>
+        <div class="match-list">
+            <div class="match">
+                <div class="match-details">
+                    <p class="league">Premier League</p>
+                    <p>Teams: Team A vs Team B</p>
+                    <p>Time: 16:00</p>
+                    <p>Pick: Over 2.5</p>
+                    <p>Odds: 1.75</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
