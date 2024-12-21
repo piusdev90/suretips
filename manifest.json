@@ -1,11 +1,12 @@
 {
-  "short_name": "Betting Predictions",
   "name": "Betting Predictions - Sure Odds & Tips",
-  "description": "Your go-to platform for accurate betting predictions, tips, and results.",
+  "short_name": "Betting Predictions",
+  "description": "Accurate betting predictions, tips, and results.",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#6a11cb",
-  "theme_color": "#2575fc",
+  "background_color": "#6a11cb", 
+  "theme_color": "#2575fc", 
+  "orientation": "portrait", 
   "icons": [
     {
       "src": "icons/icon-192x192.png",
@@ -18,18 +19,6 @@
       "type": "image/png"
     }
   ],
-  "orientation": "portrait",
   "scope": "/",
-  "screenshots": [
-    {
-      "src": "screenshots/screen1.png",
-      "sizes": "640x480",
-      "type": "image/png"
-    },
-    {
-      "src": "screenshots/screen2.png",
-      "sizes": "640x480",
-      "type": "image/png"
-    }
-  ]
+  "start_url": "/index.html"
 }
