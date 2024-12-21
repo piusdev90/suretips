@@ -1,51 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tips</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips - Betting Predictions</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 15px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Tips Section */
+    .tips-section {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tips-card {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    .tips-card h3 {
+      color: #6a11cb;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      font-size: 0.9em;
+    }
+
+    .pending {
+      background-color: #ffc107;
+    }
+
+    .won {
+      background-color: #28a745;
+    }
+
+    .lost {
+      background-color: #dc3545;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
+  <header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tips.html">Tips</a></li>
-            <li><a href="subscription.html">Subscription</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="subscription.html">Subscription</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
     </nav>
+  </header>
+  <main>
+    <section class="tips-section">
+      <h1>Betting Tips</h1>
 
-    <div class="tips-section">
-        <table>
-            <tr>
-                <th>League</th>
-                <th>Day</th>
-                <th>Teams</th>
-                <th>Status</th>
-                <th>Odds</th>
-                <th>Tips</th>
-                <th>Time</th>
-            </tr>
-            <tr>
-                <td>Premier League</td>
-                <td>Monday</td>
-                <td>Team A vs Team B</td>
-                <td>Upcoming</td>
-                <td>1.5</td>
-                <td>Win Team A</td>
-                <td>20:00</td>
-            </tr>
-            <!-- Add more rows as needed -->
-        </table>
-    </div>
+      <div class="tips-card">
+        <h3>Premier League</h3>
+        <p><strong>Teams:</strong> Team A vs Team B</p>
+        <p><strong>Time:</strong> 16:00</p>
+        <p><strong>Pick:</strong> Over 2.5</p>
+        <p><strong>Odds:</strong> 1.75</p>
+        <span class="status pending">Pending</span>
+      </div>
 
-    <footer>
-        <p>&copy; 2024 Betting Prediction. All rights reserved.</p>
-    </footer>
+      <div class="tips-card">
+        <h3>La Liga</h3>
+        <p><strong>Teams:</strong> Team C vs Team D</p>
+        <p><strong>Time:</strong> 18:00</p>
+        <p><strong>Pick:</strong> Team C to Win</p>
+        <p><strong>Odds:</strong> 2.10</p>
+        <span class="status won">Won</span>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="tips-card">
+        <h3>Bundesliga</h3>
+        <p><strong>Teams:</strong> Team E vs Team F</p>
+        <p><strong>Time:</strong> 20:30</p>
+        <p><strong>Pick:</strong> Both Teams to Score</p>
+        <p><strong>Odds:</strong> 1.95</p>
+        <span class="status lost">Lost</span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Betting Predictions. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
 </body>
 </html>
