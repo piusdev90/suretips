@@ -1,29 +1,14 @@
-// Function to handle subscription button click
-function subscribe(plan) {
-    alert("You have subscribed to the " + plan);
-    // Later enhance this to handle payment or redirection
-}
+// JavaScript for image slider (home page)
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider img');
 
-// Function to toggle the drawer menu
-function toggleMenu() {
-    var drawer = document.getElementById("drawer");
-    if (drawer.style.left === "0px") {
-        drawer.style.left = "-250px"; // Hide the drawer
-    } else {
-        drawer.style.left = "0"; // Show the drawer
-    }
-}
-
-// Function to show specific page content (for navigation menu)
-function showPage(page) {
-    var pages = document.querySelectorAll('.page-section');
-    pages.forEach(function (p) {
-        p.style.display = 'none'; // Hide all pages
+function showSlide() {
+    slides.forEach((slide, index) => {
+        slide.style.display = 'none';
     });
-    document.getElementById(page).style.display = 'block'; // Show selected page
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].style.display = 'block';
 }
 
-// Initialize with home page shown
-document.addEventListener('DOMContentLoaded', function () {
-    showPage('home');
-});
+setInterval(showSlide, 3000);
+showSlide();  // Initialize the first slide

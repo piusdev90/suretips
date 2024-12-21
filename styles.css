@@ -1,144 +1,105 @@
-/* General Styles */
-:root {
-    --main-color: #87CEEB; /* Sky Blue */
-    --background-color: #fff; /* White background for light theme */
-    --text-color: #333; /* Dark text */
-    --button-hover-color: #68b8db; /* Darker Blue for button hover */
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color); /* Light background */
-    color: var(--text-color); /* Dark text */
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* Header */
-header {
-    background-color: var(--main-color);
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+    background-color: #5f4b8b;
+    padding: 15px;
 }
 
-/* Navigation Menu (Drawer) */
-.drawer {
-    height: 100%;
-    width: 250px;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    left: -250px; /* Initially off-screen */
-    transition: 0.3s;
-    padding-top: 60px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.drawer nav ul {
-    list-style-type: none;
+nav ul {
+    list-style: none;
     padding: 0;
+    text-align: center;
 }
 
-.drawer nav ul li {
-    margin: 10px 0;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-.drawer nav ul li a {
+nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    padding: 8px;
-    display: block;
-    transition: 0.3s;
 }
 
-.drawer nav ul li a:hover {
-    background-color: #575757;
+header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 
-/* Subscription Page */
-.page-section {
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+header .slider img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
 }
 
-.subscription-cards {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.card {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
+footer {
     text-align: center;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card h3 {
-    font-size: 22px;
-    color: var(--main-color);
-}
-
-.card p {
-    font-size: 18px;
-    color: var(--text-color);
-}
-
-.card ul {
-    text-align: left;
-    padding: 10px 0;
-}
-
-.card ul li {
-    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #5f4b8b;
+    color: white;
 }
 
 button {
-    padding: 12px 20px;
-    background-color: var(--main-color);
+    background-color: #5f4b8b;
     color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 25px;
 }
 
 button:hover {
-    background-color: var(--button-hover-color);
+    background-color: #452f76;
 }
 
-/* Footer */
-footer {
-    background-color: var(--main-color);
-    color: white;
-    padding: 20px;
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.tips-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tips-section th, .tips-section td {
+    padding: 10px;
+    border: 1px solid #ddd;
     text-align: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .subscription-cards {
-        flex-direction: column;
-        align-items: center;
-    }
+.tips-section th {
+    background-color: #5f4b8b;
+    color: white;
+}
 
-    .card {
-        width: 80%;
-    }
+.about-section, .contact-section, .subscription-section, .login-section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #5f4b8b;
 }

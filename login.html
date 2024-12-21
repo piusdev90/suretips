@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subscription</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,16 +18,16 @@
         </ul>
     </nav>
 
-    <div class="subscription-section">
-        <h2>Choose your plan</h2>
+    <div class="login-section">
+        <h2>Login</h2>
         <form>
-            <label for="plan">Select Plan</label>
-            <select id="plan" name="plan">
-                <option value="basic">Basic - $5/month</option>
-                <option value="premium">Premium - $15/month</option>
-                <option value="pro">Pro - $30/month</option>
-            </select>
-            <button type="submit">Subscribe</button>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
         </form>
     </div>
 
