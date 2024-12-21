@@ -49,3 +49,27 @@ if (sliderImages.length > 0) {
     currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
   }, 3000); // Change image every 3 seconds
 }
+
+// WhatsApp link functionality for subscription page
+const whatsappLink = document.querySelectorAll('.plan button');
+if (whatsappLink.length > 0) {
+  whatsappLink.forEach((button) => {
+    button.addEventListener('click', function() {
+      const message = "Hello, I would like to subscribe to your plan.";
+      const phoneNumber = "256709728322";
+      window.location.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    });
+  });
+}
+
+// Login page validation
+document.getElementById("login-button").addEventListener("click", function() {
+  const secretId = document.getElementById("secret-id").value;
+
+  if (secretId === "267kj5") {
+    // Redirect to tips page
+    window.location.href = "tips.html";
+  } else {
+    alert("Invalid Secret ID. Please try again.");
+  }
+}); 
