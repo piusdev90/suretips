@@ -116,27 +116,35 @@
         <h3>Basic Plan</h3>
         <p>Get 5 betting tips weekly</p>
         <p><strong>Price:</strong> UGX 20,000</p>
-        <button>Subscribe</button>
+        <button onclick="redirectToWhatsApp('Basic Plan')">Subscribe</button>
       </div>
 
       <div class="plan">
         <h3>Premium Plan</h3>
         <p>Get daily betting tips with analysis</p>
         <p><strong>Price:</strong> UGX 50,000</p>
-        <button>Subscribe</button>
+        <button onclick="redirectToWhatsApp('Premium Plan')">Subscribe</button>
       </div>
 
       <div class="plan">
         <h3>VIP Plan</h3>
         <p>Access exclusive betting tips and predictions</p>
         <p><strong>Price:</strong> UGX 100,000</p>
-        <button>Subscribe</button>
+        <button onclick="redirectToWhatsApp('VIP Plan')">Subscribe</button>
       </div>
     </section>
   </main>
   <footer>
     <p>© 2024 Betting Predictions. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    function redirectToWhatsApp(plan) {
+      const phoneNumber = '256709728322'; // Your phone number without '+'
+      const message = `Hello, I would like to subscribe to the ${plan}. Please send me the payment details.`;
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.location.href = whatsappUrl; // Redirect to WhatsApp
+    }
+  </script>
 </body>
-</html>
+  </html>
