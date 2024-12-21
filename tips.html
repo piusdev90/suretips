@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tips - Betting Predictions</title>
@@ -53,34 +54,110 @@
     }
 
     .tips-card {
-      padding: 15px;
-      margin-bottom: 20px;
+      padding: 20px;
+      margin-bottom: 30px;
       border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Gradient Stroke Animation */
+    .tips-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #6a11cb, #2575fc, #00c6ff, #ff6a00);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      z-index: -1;
       border-radius: 10px;
     }
 
-    .tips-card h3 {
-      color: #6a11cb;
+    /* Gradient Move Animation */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .teams {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    .teams .team {
+      text-align: center;
+      flex: 1;
+    }
+
+    .info-box {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+
+    .info-box div {
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #f1f1f1;
+      flex: 1;
+      text-align: center;
+      margin: 0 5px;
+      position: relative;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .info-box div::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #6a11cb, #2575fc, #00c6ff, #ff6a00);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      border-radius: 8px;
+      z-index: -1;
     }
 
     .status {
-      display: inline-block;
-      padding: 5px 10px;
-      color: white;
-      border-radius: 5px;
       font-size: 0.9em;
+      font-weight: bold;
     }
 
     .pending {
-      background-color: #ffc107;
+      color: #ffc107;
     }
 
     .won {
-      background-color: #28a745;
+      color: #28a745;
     }
 
     .lost {
-      background-color: #dc3545;
+      color: #dc3545;
+    }
+
+    .pick, .odds, .time {
+      font-size: 0.9em;
     }
 
     /* Footer */
@@ -91,6 +168,7 @@
       color: white;
       margin-top: 20px;
     }
+
   </style>
 </head>
 <body>
@@ -106,42 +184,85 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <section class="tips-section">
       <h1>Betting Tips</h1>
 
       <div class="tips-card">
-        <h3>Premier League</h3>
-        <p><strong>Teams:</strong> Team A vs Team B</p>
-        <p><strong>Time:</strong> 16:00</p>
-        <p><strong>Pick:</strong> Over 2.5</p>
-        <p><strong>Odds:</strong> 1.75</p>
-        <span class="status pending">Pending</span>
+        <div class="teams">
+          <div class="team">Ugandan</div>
+          <div class="team">Vs</div>
+          <div class="team">Kenyan</div>
+        </div>
+
+        <div class="info-box">
+          <div class="result">
+            <p>Result</p>
+            <p>2:1</p>
+          </div>
+          <div class="pick">
+            <p>Pick</p>
+            <p>Over 2.5</p>
+          </div>
+          <div class="odds">
+            <p>Odds</p>
+            <p>1.85</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="time">
+            <p>Time</p>
+            <p>16:00</p>
+          </div>
+          <div class="status pending">
+            <p>Status</p>
+            <p>Pending</p>
+          </div>
+        </div>
       </div>
 
       <div class="tips-card">
-        <h3>La Liga</h3>
-        <p><strong>Teams:</strong> Team C vs Team D</p>
-        <p><strong>Time:</strong> 18:00</p>
-        <p><strong>Pick:</strong> Team C to Win</p>
-        <p><strong>Odds:</strong> 2.10</p>
-        <span class="status won">Won</span>
+        <div class="teams">
+          <div class="team">Tanzanian</div>
+          <div class="team">Vs</div>
+          <div class="team">Ugandan</div>
+        </div>
+
+        <div class="info-box">
+          <div class="result">
+            <p>Result</p>
+            <p>0:3</p>
+          </div>
+          <div class="pick">
+            <p>Pick</p>
+            <p>Team B to Win</p>
+          </div>
+          <div class="odds">
+            <p>Odds</p>
+            <p>2.15</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="time">
+            <p>Time</p>
+            <p>18:30</p>
+          </div>
+          <div class="status won">
+            <p>Status</p>
+            <p>Won</p>
+          </div>
+        </div>
       </div>
 
-      <div class="tips-card">
-        <h3>Bundesliga</h3>
-        <p><strong>Teams:</strong> Team E vs Team F</p>
-        <p><strong>Time:</strong> 20:30</p>
-        <p><strong>Pick:</strong> Both Teams to Score</p>
-        <p><strong>Odds:</strong> 1.95</p>
-        <span class="status lost">Lost</span>
-      </div>
     </section>
   </main>
+
   <footer>
     <p>© 2024 Betting Predictions. All rights reserved.</p>
   </footer>
-  
-  <script src="script.js"></script>
+
 </body>
 </html>
