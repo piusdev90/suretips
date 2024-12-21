@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SureTips - Home</title>
+    <title>Football Tips</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with Drawer Menu -->
     <header>
-        <div class="logo">SureTips</div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="tips.html">Tips</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="logo">
+            <h1>Football Tips</h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Daily Football Predictions</h1>
-        <p>Accurate and reliable tips to boost your success.</p>
-        <a href="tips.html" class="btn">Explore Tips</a>
-    </section>
+    <!-- Drawer Navigation Menu -->
+    <div id="drawer" class="drawer">
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="showPage('home')">Home</a></li>
+                <li><a href="tips.html" onclick="showPage('tips')">Tips</a></li>
+                <li><a href="about.html" onclick="showPage('about')">About</a></li>
+                <li><a href="contact.html" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="subscription.html" onclick="showPage('subscription')">Subscription</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <!-- Footer -->
+    <!-- Main Page Content -->
+    <div class="page-section" id="home">
+        <h2>Welcome to Football Tips</h2>
+        <p>Get the best football betting tips and predictions.</p>
+        <!-- More content here -->
+    </div>
+
     <footer>
-        <p>&copy; 2024 SureTips. All Rights Reserved.</p>
+        <p>&copy; 2024 Football Tips. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>

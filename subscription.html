@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription - Football Tips</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Drawer Menu -->
+    <header>
+        <div class="logo">
+            <h1>Football Tips</h1>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- Drawer Navigation Menu -->
+    <div id="drawer" class="drawer">
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="showPage('home')">Home</a></li>
+                <li><a href="tips.html" onclick="showPage('tips')">Tips</a></li>
+                <li><a href="about.html" onclick="showPage('about')">About</a></li>
+                <li><a href="contact.html" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="subscription.html" onclick="showPage('subscription')">Subscription</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Subscription Page Content -->
+    <div class="page-section" id="subscription">
+        <h2>Subscription Plans</h2>
+        <p>Select your preferred subscription plan to receive premium tips.</p>
+
+        <div class="subscription-cards">
+            <div class="card">
+                <h3>Basic Plan</h3>
+                <p>UGX 1,000/month</p>
+                <ul>
+                    <li>Access to basic predictions</li>
+                    <li>Email notifications</li>
+                </ul>
+                <button onclick="subscribe('Basic Plan')">Subscribe</button>
+            </div>
+
+            <div class="card">
+                <h3>Premium Plan</h3>
+                <p>UGX 3,000/month</p>
+                <ul>
+                    <li>Access to premium predictions</li>
+                    <li>Real-time match alerts</li>
+                    <li>Priority support</li>
+                </ul>
+                <button onclick="subscribe('Premium Plan')">Subscribe</button>
+            </div>
+
+            <div class="card">
+                <h3>VIP Plan</h3>
+                <p>UGX 5,000/month</p>
+                <ul>
+                    <li>Access to exclusive tips</li>
+                    <li>Priority predictions</li>
+                    <li>VIP support</li>
+                </ul>
+                <button onclick="subscribe('VIP Plan')">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Football Tips. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
