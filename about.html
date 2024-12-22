@@ -1,96 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Betting Predictions</title>
+  <title>About Us</title>
   <style>
+    /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Arial", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background: linear-gradient(120deg, #f9f9f9, #e1bee7);
       color: #333;
     }
 
-    header {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      color: white;
+    /* Navigation Menu */
+    .navbar {
+      background: linear-gradient(120deg, #6a1b9a, #8e24aa, #ab47bc);
       padding: 15px 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    nav ul li a {
-      color: white;
+    .navbar a {
       text-decoration: none;
+      color: #fff;
+      margin: 0 10px;
+      font-size: 16px;
       font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
+      transition: color 0.3s ease;
     }
 
-    nav ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+    .navbar a:hover {
+      color: #ffebee;
     }
 
-    .about-section {
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffe4e1;
     }
 
-    .about-section h1 {
+    /* Main Content Section */
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       text-align: center;
-      color: #6a11cb;
     }
 
-    .about-section p {
-      margin: 20px 0;
-      line-height: 1.6;
+    .container h1 {
+      font-size: 28px;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      color: white;
+    .container p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .container p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Button for Additional Engagement */
+    .container .join-btn {
+      display: inline-block;
       margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background: linear-gradient(120deg, #8e24aa, #6a1b9a);
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container .join-btn:hover {
+      background: linear-gradient(120deg, #6a1b9a, #8e24aa);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      .container h1 {
+        font-size: 24px;
+      }
+
+      .container p {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="subscription.html">Subscription</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="about-section">
-      <h1>About Us</h1>
-      <p>Welcome to our betting predictions website. We provide reliable and accurate tips to help you make informed betting decisions. Our team of experts analyzes games thoroughly to bring you the best predictions.</p>
-      <p>Our goal is to provide a user-friendly platform with high-quality content and consistent winning tips. Join us on our journey and take your betting experience to the next level!</p>
-    </section>
-  </main>
-  <footer>
-    <p>© 2024 Betting Predictions. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About</a>
+      <a href="subscription.html">Sub</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="container">
+    <h1>About Us</h1>
+    <p>
+      Welcome to our betting platform, your ultimate destination for trusted sports betting predictions. 
+      We combine expertise, data-driven analysis, and a passion for sports to deliver accurate tips and unbeatable odds.
+    </p>
+    <p>
+      Whether you're a seasoned bettor or a newcomer, our platform provides insights into the world's most popular leagues, including football, basketball, and more. Our mission is to empower you to make informed decisions and maximize your winnings.
+    </p>
+    <p>
+      Experience the thrill of betting with confidence as we help you navigate the exciting world of sports wagering. 
+      Transparency, integrity, and excellence define everything we do.
+    </p>
+    <p>
+      Join us today and take your betting journey to the next level. Together, let's win smarter!
+    </p>
+    <a href="login.html" class="join-btn">Join Now</a>
+  </div>
+
 </body>
 </html>
