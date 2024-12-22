@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Plan Tips</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e1e8ed;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+      padding: 10px 20px;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .tips-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .match-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #f7f9fa;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .match-info img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .match-info .team {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .match-info .time {
+      font-size: 14px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
+    .league-info {
+      text-align: center;
+      padding: 10px 0;
+      margin: 15px 0;
+      background: #f3f3f3;
+      border-radius: 15px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .league-info img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .league-info span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .prediction-info {
+      text-align: center;
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .prediction-info h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .prediction-info p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
+    .odds-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #eaf3ea;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .odds-info div {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .odds-info .risk {
+      color: #2e7d32;
+      background: #dcedc8;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    .odds-info .odds {
+      color: #ffffff;
+      background: #6a1b9a;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .tips-container {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .match-info img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .match-info .team {
+        font-size: 14px;
+      }
+
+      .match-info .time {
+        font-size: 12px;
+      }
+
+      .league-info span {
+        font-size: 14px;
+      }
+
+      .prediction-info h3 {
+        font-size: 16px;
+      }
+
+      .odds-info div {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="home.html">Home</a>
+  <a href="login.html">Login</a>
+  <a href="about.html">About</a>
+  <a href="subscription.html">Subscription</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="tips-container">
+  <!-- Match Information -->
+  <div class="match-info">
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Aston_Villa_FC_crest_%282016%29.svg" alt="Aston Villa">
+    <div class="team">Aston Villa</div>
+    <div class="time">12:30</div>
+    <div class="team">Manchester City</div>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Manchester_City_FC_badge.svg" alt="Manchester City">
+  </div>
+
+  <!-- League Information -->
+  <div class="league-info">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League">
+    <span>Premier League</span>
+  </div>
+
+  <!-- Prediction Information -->
+  <div class="prediction-info">
+    <h3>Both Teams to Score</h3>
+    <p>Yes</p>
+  </div>
+
+  <!-- Odds and Risk Information -->
+  <div class="odds-info">
+    <div class="risk">Risk: Low</div>
+    <div class="odds">Odds: 1.50</div>
+  </div>
+</div>
+
+</body>
+</html>
