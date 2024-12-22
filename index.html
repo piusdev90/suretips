@@ -5,14 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset margins and paddings */
+    * {
       margin: 0;
       padding: 0;
-      background: #e1e8ed;
+      box-sizing: border-box;
     }
 
-    /* Navigation Bar */
+    html, body {
+      font-family: Arial, sans-serif;
+      height: 100%;
+      background: #e1e8ed;
+      display: flex;
+      flex-direction: column;
+    }
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -34,36 +41,43 @@
       text-decoration: underline;
     }
 
-    /* Hero Section */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .hero {
       text-align: center;
       background: linear-gradient(90deg, #6a1b9a, #8e24aa);
       color: white;
-      padding: 60px 20px;
-      border-radius: 0 0 50px 50px;
+      padding: 40px 20px;
+      border-radius: 0 0 30px 30px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
 
     .hero h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 30px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 15px;
     }
 
     .hero .hero-btn {
       background: #ffffff;
       color: #6a1b9a;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 8px 18px;
+      font-size: 14px;
       font-weight: bold;
       text-decoration: none;
       border: none;
-      border-radius: 25px;
+      border-radius: 20px;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       transition: background 0.3s ease, color 0.3s ease;
@@ -74,10 +88,11 @@
       color: #ffffff;
     }
 
-    /* Slider Section */
     .slider {
       position: relative;
-      max-width: 100%;
+      width: 80%;
+      max-width: 800px;
+      height: 200px;
       margin: 20px auto;
       overflow: hidden;
       border-radius: 15px;
@@ -91,7 +106,7 @@
 
     .slide {
       min-width: 100%;
-      height: 300px;
+      height: 100%;
     }
 
     .slide img {
@@ -123,13 +138,52 @@
       background: rgba(0, 0, 0, 0.8);
     }
 
-    /* Footer Section */
+    .buttons-section {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .buttons-section button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .buttons-section button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366; /* WhatsApp green */
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1eb859;
+    }
+
+    .telegram-btn {
+      background-color: #0088cc; /* Telegram blue */
+    }
+
+    .telegram-btn:hover {
+      background-color: #007ab6;
+    }
+
     .footer {
       text-align: center;
       background: #6a1b9a;
       color: white;
       padding: 20px 0;
-      margin-top: 20px;
+      margin-top: auto;
     }
 
     .footer p {
@@ -149,79 +203,77 @@
   </style>
 </head>
 <body>
-
-<!-- Navigation Bar -->
-<div class="navbar">
-  <a href="home.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="login.html">Login</a>
-  <a href="subscription.html">Subscription</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- Hero Section -->
-<div class="hero">
-  <h1>Welcome to SB Tips</h1>
-  <p>Your ultimate destination for the most accurate and reliable betting tips. Choose your plan and start winning today!</p>
-  <button class="hero-btn" onclick="location.href='login.html'">Get Started</button>
-</div>
-
-<!-- Slider Section -->
-<div class="slider">
-  <div class="slides">
-    <div class="slide">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVwUf9eieMGfjwL-o8YeM4bd8_HfYk8gvJEUIjk3v0e_9zOMXOC1nhPjY&s=10" alt="Slide 1">
-    </div>
-    <div class="slide">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBEYPJPBn80yOXm3mCKByeCYZhunlIVee59o2ksmxbKF-Z9622lQcU_Z0&s=10" alt="Slide 2">
-    </div>
-    <div class="slide">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqya0nGj7-TGwkxUghJ887tsSAuYvLNh-8ix2r3CT32FeBERNBWyeGCKY7&s=10" alt="Slide 3">
-    </div>
-    <div class="slide">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSutGI41V4PnmYsHvd2fJvYjdEQbOh1XCAFMN1mfNiVGutATsPnClPCnUk&s=10" alt="Slide 4">
-    </div>
+  <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="login.html">Login</a>
+    <a href="subscription.html">Subscription</a>
+    <a href="contact.html">Contact</a>
   </div>
-  <div class="slider-buttons">
-    <button class="slider-button" id="prev">&#10094;</button>
-    <button class="slider-button" id="next">&#10095;</button>
-  </div>
+
+  <div class="main-content">
+    <div class="hero">
+      <h1>Welcome to SB Tips</h1>
+      <p>Your ultimate destination for the most accurate and reliable betting tips.</p>
+      <button class="hero-btn" onclick="location.href='login.html'">Get Started</button>
+    </div>
+
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVwUf9eieMGfjwL-o8YeM4bd8_HfYk8gvJEUIjk3v0e_9zOMXOC1nhPjY&s=10" alt="Slide 1">
+        </div>
+        <div class="slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBEYPJPBn80yOXm3mCKByeCYZhunlIVee59o2ksmxbKF-Z9622lQcU_Z0&s=10" alt="Slide 2">
+        </div>
+        <div class="slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqya0nGj7-TGwkxUghJ887tsSAuYvLNh-8ix2r3CT32FeBERNBWyeGCKY7&s=10" alt="Slide 3">
+        </div>
+        <div class="slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSutGI41V4PnmYsHvd2fJvYjdEQbOh1XCAFMN1mfNiVGutATsPnClPCnUk&s=10" alt="Slide 4">
+        </div>
+      </div>
+      <div class="slider-buttons">
+        <button class="slider-button" id="prev">&#10094;</button>
+        <button class="slider-button" id="next">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="buttons-section">
+  <a href="https://chat.whatsapp.com/KHftw8BSfLNAqMx0t5MluQ" target="_blank">
+    <button class="whatsapp-btn"> WhatsApp Group</button>
+  </a>
+  <a href="t.me/dailytipsug" target="_blank">
+    <button class="telegram-btn"> Telegram Channel</button>
+  </a>
 </div>
 
-<!-- Footer Section -->
-<div class="footer">
-  <p>&copy; 2024 SB Tips. All Rights Reserved. | <a href="contact.html">Contact Us</a></p>
-</div>
+  <footer class="footer">
+    <p>&copy; 2024 SB Tips. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+  </footer>
 
-<script>
-  const slides = document.querySelector('.slides');
-  const slide = document.querySelectorAll('.slide');
-  const prev = document.getElementById('prev');
-  const next = document.getElementById('next');
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
 
-  let currentIndex = 0;
+    function changeSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-  function updateSlider() {
-    const slideWidth = slide[0].clientWidth;
-    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  }
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
 
-  next.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slide.length;
-    updateSlider();
-  });
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+    });
 
-  prev.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slide.length) % slide.length;
-    updateSlider();
-  });
-
-  // Auto Slide (Optional)
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % slide.length;
-    updateSlider();
-  }, 5000);
-</script>
+    setInterval(changeSlide, 3000); // Auto slide every 3 seconds
+  </script>
 
 </body>
   </html>
