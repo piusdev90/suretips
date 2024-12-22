@@ -124,6 +124,15 @@
       color: #6a1b9a;
     }
 
+    /* Error Message */
+    .error-message {
+      color: red;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+
     /* Responsive Design */
     @media (max-width: 600px) {
       .container {
@@ -151,7 +160,8 @@
     <h1>Login</h1>
     <p>Please enter your secret ID to access the tips section</p>
 
-    <form action="#">
+    <!-- Login Form -->
+    <form id="loginForm" onsubmit="return validateLogin();">
       <!-- Secret ID Input -->
       <div class="form-group">
         <label for="secretId">Secret ID</label>
@@ -167,8 +177,34 @@
       <div class="form-group">
         <a href="subscription.html">Not a member? Join Us</a>
       </div>
+
+      <!-- Error Message -->
+      <div class="error-message" id="errorMessage">
+        Invalid Secret ID. Please try again.
+      </div>
     </form>
   </div>
 
+  <!-- JavaScript for Login Validation -->
+  <script>
+    function validateLogin() {
+      // Get the entered secret ID
+      var secretId = document.getElementById('secretId').value;
+
+      // Correct Secret ID
+      var correctSecretId = '267kj5';
+
+      // If the entered ID is correct, redirect to tips page
+      if (secretId === correctSecretId) {
+        window.location.href = "tips.html"; // Redirect to the tips page
+        return false; // Prevent form submission
+      } else {
+        // Show error message and keep the user on the login page
+        document.getElementById('errorMessage').style.display = 'block';
+        return false; // Prevent form submission
+      }
+    }
+  </script>
+
 </body>
-</html>
+        </html>
