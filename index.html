@@ -1,153 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="manifest.json">
   <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Betting Predictions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
   <style>
-    /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background: #e1e8ed;
     }
 
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      color: white;
-      padding: 15px 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    /* Navigation Bar */
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+      padding: 10px 20px;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    nav ul li a {
-      color: white;
+    .navbar a {
       text-decoration: none;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-
-    nav ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Welcome Section */
-    .welcome-section {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
       color: white;
-      border-radius: 20px;
-      margin: 20px auto;
-      max-width: 900px;
+      font-weight: bold;
+      margin: 0 10px;
     }
 
-    .welcome-section h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+    .navbar a:hover {
+      text-decoration: underline;
     }
 
-    .welcome-section p {
-      font-size: 1.2em;
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+      color: white;
+      padding: 60px 20px;
+      border-radius: 0 0 50px 50px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero h1 {
+      font-size: 36px;
       margin-bottom: 20px;
     }
 
-    .welcome-section .btn {
-      display: inline-block;
+    .hero p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .hero .hero-btn {
+      background: #ffffff;
+      color: #6a1b9a;
       padding: 10px 20px;
-      background-color: white;
-      color: #6a11cb;
-      text-decoration: none;
+      font-size: 16px;
       font-weight: bold;
-      border-radius: 5px;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .welcome-section .btn:hover {
-      background-color: #fff;
-      color: #2575fc;
-      transform: scale(1.05);
+    .hero .hero-btn:hover {
+      background: #6a1b9a;
+      color: #ffffff;
     }
 
-    /* Slider */
+    /* Slider Section */
     .slider {
-      margin: 30px auto;
-      width: 90%;
-      max-width: 800px;
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
       overflow: hidden;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .slides {
       display: flex;
-      animation: slide 10s infinite;
+      transition: transform 0.5s ease-in-out;
     }
 
-    .slides img {
+    .slide {
+      min-width: 100%;
+      height: 300px;
+    }
+
+    .slide img {
       width: 100%;
-      flex-shrink: 0;
+      height: 100%;
+      object-fit: cover;
     }
 
-    @keyframes slide {
-      0%, 20% { transform: translateX(0); }
-      25%, 45% { transform: translateX(-100%); }
-      50%, 70% { transform: translateX(-200%); }
-      75%, 100% { transform: translateX(0); }
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
+    .slider-button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
       color: white;
+      font-size: 24px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .slider-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Footer Section */
+    .footer {
+      text-align: center;
+      background: #6a1b9a;
+      color: white;
+      padding: 20px 0;
       margin-top: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="subscription.html">Subscription</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section class="welcome-section">
-      <h1>Welcome to the houss eof sure wins</h1>
-      <p>Your trusted platform for accurate betting tips and insights.</p>
-      <a href="login.html" class="btn">Login to Get Started</a>
-    </section>
 
-    <div class="slider">
-      <div class="slides">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNGcYx13NA3z9f3Ag_rMqCWfOFCD-6YPmtMg&usqp=CAU" alt="Slide 1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5CPgAjadFQt00uksPMxbS6kp86WM4cu1BGxuhyI3s3jsncmgMyANMuQjR&s=10" alt="Slide 2">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZvpPGTC5HLPSL1Fjv_bAJ8lAAQSK_cr916dn6TDOIloF-VPcsTwV8mws&s=10" alt="Slide 3">
-      </div>
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="login.html">Login</a>
+  <a href="subscription.html">Subscription</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+  <h1>Welcome to SB Tips</h1>
+  <p>Your ultimate destination for the most accurate and reliable betting tips. Choose your plan and start winning today!</p>
+  <button class="hero-btn" onclick="location.href='login.html'">Get Started</button>
+</div>
+
+<!-- Slider Section -->
+<div class="slider">
+  <div class="slides">
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVwUf9eieMGfjwL-o8YeM4bd8_HfYk8gvJEUIjk3v0e_9zOMXOC1nhPjY&s=10" alt="Slide 1">
     </div>
-  </main>
-  <footer>
-    <p>© 2024 Betting Predictions. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBEYPJPBn80yOXm3mCKByeCYZhunlIVee59o2ksmxbKF-Z9622lQcU_Z0&s=10" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqya0nGj7-TGwkxUghJ887tsSAuYvLNh-8ix2r3CT32FeBERNBWyeGCKY7&s=10" alt="Slide 3">
+    </div>
+    <div class="slide">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSutGI41V4PnmYsHvd2fJvYjdEQbOh1XCAFMN1mfNiVGutATsPnClPCnUk&s=10" alt="Slide 4">
+    </div>
+  </div>
+  <div class="slider-buttons">
+    <button class="slider-button" id="prev">&#10094;</button>
+    <button class="slider-button" id="next">&#10095;</button>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+  <p>&copy; 2024 SB Tips. All Rights Reserved. | <a href="contact.html">Contact Us</a></p>
+</div>
+
+<script>
+  const slides = document.querySelector('.slides');
+  const slide = document.querySelectorAll('.slide');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+
+  let currentIndex = 0;
+
+  function updateSlider() {
+    const slideWidth = slide[0].clientWidth;
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  next.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slide.length;
+    updateSlider();
+  });
+
+  prev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slide.length) % slide.length;
+    updateSlider();
+  });
+
+  // Auto Slide (Optional)
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slide.length;
+    updateSlider();
+  }, 5000);
+</script>
+
 </body>
-</html>
+  </html>
