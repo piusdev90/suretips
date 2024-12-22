@@ -1,267 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="manifest.json">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tips - Betting Predictions</title>
+  <title>Tips Page</title>
   <style>
-    /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Arial", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background: #e1e8ed;
     }
 
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      color: white;
-      padding: 15px 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    /* Navigation Bar */
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    nav ul li a {
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+      padding: 10px 20px;
       color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a {
       text-decoration: none;
+      color: white;
       font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 5px;
+      margin: 0 10px;
     }
 
-    nav ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+    .navbar a:hover {
+      text-decoration: underline;
     }
 
-    /* Tips Section */
-    .tips-section {
-      max-width: 900px;
+    .tips-container {
+      max-width: 600px;
       margin: 20px auto;
       padding: 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .tips-card {
-      padding: 20px;
-      margin-bottom: 30px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      background-color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Gradient Stroke Animation */
-    .tips-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #6a11cb, #2575fc, #00c6ff, #ff6a00);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-      z-index: -1;
-      border-radius: 10px;
-    }
-
-    /* Gradient Move Animation */
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .teams {
+    .match-info {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      font-size: 1.3em;
-      margin-bottom: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: gradientMove 10s ease infinite;
+      padding: 10px 20px;
+      background: #f7f9fa;
+      border-radius: 15px;
+      margin-bottom: 15px;
     }
 
-    .teams .team {
+    .match-info img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .match-info .team {
       text-align: center;
-      flex: 1;
+      font-size: 16px;
+      font-weight: bold;
     }
 
-    .info-box {
+    .match-info .time {
+      font-size: 14px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
+    .league-info {
+      text-align: center;
+      padding: 10px 0;
+      margin: 15px 0;
+      background: #f3f3f3;
+      border-radius: 15px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .league-info img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .league-info span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .prediction-info {
+      text-align: center;
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .prediction-info h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .prediction-info p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
+    .odds-info {
       display: flex;
-      justify-content: space-around;
-      margin-top: 10px;
+      justify-content: space-between;
+      align-items: center;
+      background: #eaf3ea;
+      padding: 10px 20px;
+      border-radius: 15px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .info-box div {
-      padding: 5px 10px;
-      border-radius: 5px;
-      background-color: #f1f1f1;
-      flex: 1;
-      text-align: center;
-      margin: 0 5px;
-      position: relative;
-      border: 3px solid transparent;
-      background-clip: padding-box;
-    }
-
-    .info-box div::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #6a11cb, #2575fc, #00c6ff, #ff6a00);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-      border-radius: 8px;
-      z-index: -1;
-    }
-
-    .status {
-      font-size: 0.9em;
+    .odds-info div {
+      font-size: 14px;
       font-weight: bold;
     }
 
-    .pending {
-      color: #ffc107;
+    .odds-info .risk {
+      color: #2e7d32;
+      background: #dcedc8;
+      padding: 5px 10px;
+      border-radius: 10px;
     }
 
-    .won {
-      color: #28a745;
+    .odds-info .odds {
+      color: #ffffff;
+      background: #6a1b9a;
+      padding: 5px 10px;
+      border-radius: 10px;
     }
 
-    .lost {
-      color: #dc3545;
-    }
+    @media (max-width: 768px) {
+      .tips-container {
+        margin: 10px;
+        padding: 15px;
+      }
 
-    .pick, .odds, .time {
-      font-size: 0.9em;
-    }
+      .match-info img {
+        width: 30px;
+        height: 30px;
+      }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      color: white;
-      margin-top: 20px;
-    }
+      .match-info .team {
+        font-size: 14px;
+      }
 
+      .match-info .time {
+        font-size: 12px;
+      }
+
+      .league-info span {
+        font-size: 14px;
+      }
+
+      .prediction-info h3 {
+        font-size: 16px;
+      }
+
+      .odds-info div {
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="subscription.html">Subscription</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="tips-section">
-      <h1>Betting Tips</h1>
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="login.html">Login</a>
+  <a href="about.html">About</a>
+  <a href="subscription.html">Subscription</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-      <div class="tips-card">
-        <div class="teams">
-          <div class="team">Ugandan</div>
-          <div class="team">Vs</div>
-          <div class="team">Kenyan</div>
-        </div>
+<div class="tips-container">
+  <!-- Match Information -->
+  <div class="match-info">
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Aston_Villa_FC_crest_%282016%29.svg" alt="Aston Villa">
+    <div class="team">Aston Villa</div>
+    <div class="time">12:30</div>
+    <div class="team">Manchester City</div>
+    <img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Manchester_City_FC_badge.svg" alt="Manchester City">
+  </div>
 
-        <div class="info-box">
-          <div class="result">
-            <p>Result</p>
-            <p>2:1</p>
-          </div>
-          <div class="pick">
-            <p>Pick</p>
-            <p>Over 2.5</p>
-          </div>
-          <div class="odds">
-            <p>Odds</p>
-            <p>1.85</p>
-          </div>
-        </div>
+  <!-- League Information -->
+  <div class="league-info">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League">
+    <span>Premier League</span>
+  </div>
 
-        <div class="info-box">
-          <div class="time">
-            <p>Time</p>
-            <p>16:00</p>
-          </div>
-          <div class="status pending">
-            <p>Status</p>
-            <p>Pending</p>
-          </div>
-        </div>
-      </div>
+  <!-- Prediction Information -->
+  <div class="prediction-info">
+    <h3>Both Teams Score</h3>
+    <p>Yes</p>
+  </div>
 
-      <div class="tips-card">
-        <div class="teams">
-          <div class="team">Tanzanian</div>
-          <div class="team">Vs</div>
-          <div class="team">Ugandan</div>
-        </div>
-
-        <div class="info-box">
-          <div class="result">
-            <p>Result</p>
-            <p>0:3</p>
-          </div>
-          <div class="pick">
-            <p>Pick</p>
-            <p>Team B to Win</p>
-          </div>
-          <div class="odds">
-            <p>Odds</p>
-            <p>2.15</p>
-          </div>
-        </div>
-
-        <div class="info-box">
-          <div class="time">
-            <p>Time</p>
-            <p>18:30</p>
-          </div>
-          <div class="status won">
-            <p>Status</p>
-            <p>Won</p>
-          </div>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2024 Betting Predictions. All rights reserved.</p>
-  </footer>
+  <!-- Odds and Risk Information -->
+  <div class="odds-info">
+    <div class="risk">Risk: Low</div>
+    <div class="odds">Odds: 1.50</div>
+  </div>
+</div>
 
 </body>
 </html>
