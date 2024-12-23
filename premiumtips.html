@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Plan Tips</title>
+  <title>Basic Tips</title>
   <style>
     body {
-      font-family: "Arial", sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9; /* Light background */
       margin: 0;
       padding: 0;
-      background: #e1e8ed;
     }
 
+    /* Navigation Bar */
     .navbar {
+      background: #6a1b9a; /* Purple */
+      color: white;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
-      padding: 10px 20px;
-      color: white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .navbar a {
-      text-decoration: none;
       color: white;
-      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
       margin: 0 10px;
     }
 
@@ -33,179 +33,213 @@
       text-decoration: underline;
     }
 
+    h1 {
+      color: #6a1b9a; /* Purple */
+      font-size: 28px;
+      text-align: center;
+      margin: 20px 0 5px;
+    }
+
+    .quote {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
     .tips-container {
+      width: 90%;
       max-width: 600px;
-      margin: 20px auto;
+      margin: 0 auto;
+    }
+
+    .tip-card {
+      background: #ffffff; /* White background for the card */
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
     }
 
     .match-info {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      background: #f7f9fa;
-      border-radius: 15px;
       margin-bottom: 15px;
     }
 
-    .match-info img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
+    .team-logo {
+      height: 50px;
     }
 
-    .match-info .team {
+    .match-time {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .team-names {
       text-align: center;
       font-size: 16px;
       font-weight: bold;
-    }
-
-    .match-info .time {
-      font-size: 14px;
-      font-weight: bold;
-      color: #6a1b9a;
+      color: #333;
+      margin: 5px 0;
     }
 
     .league-info {
-      text-align: center;
-      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin: 15px 0;
-      background: #f3f3f3;
-      border-radius: 15px;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .league-info img {
-      width: 30px;
-      vertical-align: middle;
+    .league-logo {
+      height: 50px;
       margin-right: 10px;
     }
 
-    .league-info span {
+    .league-name {
       font-size: 16px;
       font-weight: bold;
+      color: #6a1b9a; /* Purple */
     }
 
-    .prediction-info {
+    .tip-details {
       text-align: center;
-      background: #f9f9f9;
-      border-radius: 15px;
-      padding: 15px;
-      margin-bottom: 20px;
+      margin: 10px 0;
     }
 
-    .prediction-info h3 {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 5px;
-    }
-
-    .prediction-info p {
-      font-size: 16px;
-      font-weight: bold;
-      color: #6a1b9a;
-    }
-
-    .odds-info {
-      display: flex;
-      justify-content: space-between;
+    .tip-details p {
+      margin: 8px 0;
+      font-size: 14px;
       align-items: center;
-      background: #eaf3ea;
-      padding: 10px 20px;
-      border-radius: 15px;
-      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: #555;
     }
 
-    .odds-info div {
+    .risk-odds-status {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .risk, .status, .odds {
+      padding: 5px 10px;
+      border-radius: 12px;
       font-size: 14px;
       font-weight: bold;
+      color: white;
+      text-align: center;
     }
 
-    .odds-info .risk {
-      color: #2e7d32;
-      background: #dcedc8;
-      padding: 5px 10px;
-      border-radius: 10px;
+    .risk {
+      background: #28a745; /* Green for Low Risk */
     }
 
-    .odds-info .odds {
-      color: #ffffff;
-      background: #6a1b9a;
-      padding: 5px 10px;
-      border-radius: 10px;
+    .odds {
+      background: #6a1b9a; /* Purple for Odds */
     }
 
-    @media (max-width: 768px) {
-      .tips-container {
-        margin: 10px;
-        padding: 15px;
-      }
+    /* Status Colors */
+    .status-won {
+      background: #28a745; /* Green for Won */
+    }
 
-      .match-info img {
-        width: 30px;
-        height: 30px;
-      }
+    .status-lost {
+      background: #dc3545; /* Red for Lost */
+    }
 
-      .match-info .team {
-        font-size: 14px;
-      }
+    .status-pending {
+      background: #ffc107; /* Yellow for Pending */
+      color: #333;
+    }
 
-      .match-info .time {
-        font-size: 12px;
-      }
+    /* Footer */
+    .footer {
+      background: #6a1b9a; /* Purple */
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
 
-      .league-info span {
-        font-size: 14px;
-      }
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
 
-      .prediction-info h3 {
-        font-size: 16px;
-      }
-
-      .odds-info div {
-        font-size: 12px;
-      }
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<div class="navbar">
-  <a href="home.html">Home</a>
-  <a href="login.html">Login</a>
-  <a href="about.html">About</a>
-  <a href="subscription.html">Subscription</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<div class="tips-container">
-  <div class="match-info">
-    <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Aston_Villa_FC_crest_%282016%29.svg" alt="Aston Villa">
-    <div class="team">Arsenal</div>
-    <div class="time">15:00</div>
-    <div class="team">Liverpool</div>
-    <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" alt="Liverpool">
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">Tips</a>
+      <a href="login.html">Home</a>
+      <a href="subscription.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 
-  <div class="league-info">
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League">
-    <span>Premier League</span>
+  <!-- Page Heading -->
+  <h1>Premium Tips 🌟</h1>
+  <p class="quote">"💫You will be receiving 5 Beting tips daily 💫"</p>
+
+  <div class="tips-container">
+    <!-- Tip 1 -->
+    <div class="tip-card">
+      <div class="match-info">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/380px-Paris_Saint-Germain_F.C..svg.png" alt="Aston Villa" class="team-logo">
+        <span class="match-time"> 2 : 3</span>
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/LogoASMonacoFC2021.svg" alt="Man City" class="team-logo">
+      </div>
+      <p class="team-names">PSG VS  AC Monaco</p>
+        <div class="league-info">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/83/Ligue_1_2024.svg" alt="La Liga" class="league-logo">
+        <span class="league-name"></span>
+      </div>
+      <div class="tip-details">
+        <p><strong>Pick : </strong>Over 2.5</p>
+      </div>
+      <div class="risk-odds-status">
+        <div class="risk"> 🕜 20 : 30 </div>
+        <div class="status status-won">Won</div>
+        <div class="odds">Odds: 4.10</div>
+      </div>
+    </div>
+
+    <!-- Tip 2 -->
+    <div class="tip-card">
+      <div class="match-info">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/PSV_Eindhoven.svg" alt="Barcelona" class="team-logo">
+        <span class="match-time">2 : 4</span>
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" alt="Real Madrid" class="team-logo">
+      </div>
+      <p class="team-names">PSV  Vs  Arsenal</p>
+      <div class="league-info">
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/UEFA_Champions_League.svg" alt="La Liga" class="league-logo">
+        <span class="league-name"></span>
+      </div>
+      <div class="tip-details">
+        <p><strong>Pick : </strong>Away</p>
+      </div>
+      <div class="risk-odds-status">
+        <div class="risk">🕜 23 : 30</div>
+        <div class="status status-pending">Pending</div>
+        <div class="odds">Odds: 3.5</div>
+      </div>
+    </div>
   </div>
 
-  <div class="prediction-info">
-    <h3>Over 2.5 Goals</h3>
-    <p>Yes</p>
+  <!-- Footer -->
+  <div class="footer">
+    <p>Copyright &copy; 2024 Piustech | <a href="privacy.html">Privacy Policy</a></p>
   </div>
-
-  <div class="odds-info">
-    <div class="risk">Risk: Medium</div>
-    <div class="odds">Odds: 1.80</div>
-  </div>
-</div>
 
 </body>
 </html>
